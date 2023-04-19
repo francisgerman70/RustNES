@@ -23,7 +23,7 @@ in quality.
 
 ## Contributors
 ---
-[Cy Chung](https://github.com/crschung), [Jae Park](https://github.com/jpark052), [Spencer Hart](https://github.com/Syyreign), [David Kim](https://github.com/Quayvid), [Ethan Slogotski](https://github.com/eman1003), [Francis German](francisgerman70), [Skylar Buck](https://github.com/Skylar777)
+ [Francis German](francisgerman70)
 
 ## Resources
 ---
