@@ -42,6 +42,7 @@ We could test this function by comparing the visualization with other pre-existi
 ### Crates
 * tkinter
 * numpy
+* pygame
 
 ## How To Run
 ```

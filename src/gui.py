@@ -3,6 +3,8 @@ import numpy as np
 import pygame
 
 class GUI:
+    waveform_type = "Triangle Wave"
+
     def __init__(self):
         self.root = tk.Tk()
         self.root.title("Gui Player")
@@ -19,6 +21,16 @@ class GUI:
         # volume button
         self.volume_slider = tk.Scale(self.root, from_=0, to=100, orient=tk.HORIZONTAL, command=self.set_volume)
         self.volume_slider.pack()
+        self.volume_label = tk.Label(self.root, text="Volume")
+        self.volume_label.pack()
+
+        # midi note slider
+        self.note_slider = tk.Scale(self.root, from_=0, to=127, orient=tk.HORIZONTAL, command=self.set_note)
+        self.note_slider.pack()
+        self.note_label = tk.Label(self.root, text="MIDI Note")
+        self.note_label.pack()
+        
+
 
         # Import button
         self.import_button = tk.Button(self.root, text="Import MIDI", command=self.import_button)
@@ -32,9 +44,17 @@ class GUI:
         self.waveform_button = tk.Button(self.root, text="Switch Waveform", command=self.switch_waveform)
         self.waveform_button.pack()
 
+        # waveform type label
+        self.waveform_label = tk.Label(self.root, text="Waveform Type: " + self.waveform_type)
+        self.waveform_label.pack()
+
         # Initialize waveform type and frequency
         self.waveform_type = "triangle"
         self.frequency = 440
+
+        # Create canvas to stretch out gui
+        self.canvas = tk.Canvas(self.root, width=600, height=0, bg='gray')
+        self.canvas.pack()
 
     def play_pause(self):
         # first check if audio channel is currently playing
@@ -68,13 +88,20 @@ class GUI:
         
         pass  
 
+    def set_note(self, note):
+        
+        pass
+
     def switch_waveform(self):
         if self.waveform_type == "triangle":
             self.waveform_type = "pulse"
+            self.waveform_label.configure(text="Pulse Wave")
         elif self.waveform_type == "pulse":
             self.waveform_type = "noise"
+            self.waveform_label.configure(text="Noise Wave")
         else:
             self.waveform_type = "triangle"
+            self.waveform_label.configure(text="Triangle Wave")
 
     def run(self):
         self.root.mainloop()
