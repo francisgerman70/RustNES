@@ -30,14 +30,12 @@ class GUI:
         self.note_label = tk.Label(self.root, text="MIDI Note")
         self.note_label.pack()
         
-
-
         # Import button
         self.import_button = tk.Button(self.root, text="Import MIDI", command=self.import_button)
         self.import_button.pack()
 
         # export Button
-        self.export_button = tk.Button(self.root, text="Export", command=self.export_button)
+        self.export_button = tk.Button(self.root, text="Export MIDI", command=self.export_button)
         self.export_button.pack()
 
         # Waveform selection button
